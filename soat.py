@@ -22,7 +22,7 @@ while True:
     im = Image.open("background.jpg")
     MAX_W, MAX_H = im.size
     draw = ImageDraw.Draw(im)
-    font = ImageFont.truetype('for.ttf', 500)
+    font = ImageFont.truetype('for.ttf', 100)
     w, h = draw.textsize(x, font=font)
     draw.text(((MAX_W - w) / 2, (MAX_H - h) / 2),str(x),(255,255,255),font=font)
     im.save('test.png')
