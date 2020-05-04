@@ -27,4 +27,4 @@ while True:
     draw.text(((MAX_W - w) / 2, (MAX_H - h) / 2),str(x),(255,255,255),font=font)
     im.save('test.png')
     app.set_profile_photo("test.png")
-    time.sleep(15)
+    time.sleep(25)
