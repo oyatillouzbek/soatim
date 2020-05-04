@@ -16,15 +16,15 @@ while True:
     MAX_W, MAX_H = im.size
     draw = ImageDraw.Draw(im)
     font = ImageFont.truetype('for.ttf', 500)
-    im.save('test.png')
     ok = pytz.timezone("Asia/Tashkent")
     x = datetime.datetime.now(tz=ok)
     x = x.strftime("%H:%M")
-    w, h = draw.textsize(x, font=font)
-    draw.text(((MAX_W - w) / 2, (MAX_H - h) / 2),x,(255,255,255),font=font)
-    app.set_profile_photo("test.png")
     app.send(functions.account.UpdateProfile(
     first_name=str(x),
     about="O'zbekistonda soat: " +str(x)
     ))
-    time.sleep(30)
+    w, h = draw.textsize(x, font=font)
+    draw.text(((MAX_W - w) / 2, (MAX_H - h) / 2),str(x),(255,255,255),font=font)
+    im.save('test.png')
+    app.set_profile_photo("test.png")
+    time.sleep(10)
