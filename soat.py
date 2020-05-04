@@ -19,6 +19,7 @@ while True:
     ))
     photos = app.get_profile_photos("me")
     app.delete_profile_photos(photos[0].file_id)
+    time.sleep(5)
     im = Image.open("background.jpg")
     MAX_W, MAX_H = im.size
     draw = ImageDraw.Draw(im)
