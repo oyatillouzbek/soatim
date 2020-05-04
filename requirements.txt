@@ -1,3 +1,4 @@
 pyrogram
 pytz
 pillow
+textwrap
