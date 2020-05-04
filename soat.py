@@ -13,13 +13,8 @@ while True:
     ok = pytz.timezone("Asia/Tashkent")
     x = datetime.datetime.now(tz=ok)
     x = x.strftime("%H:%M")
-    app.send(functions.account.UpdateProfile(
-    first_name=str(x),
-    about="O'zbekistonda soat: " +str(x)
-    ))
     photos = app.get_profile_photos("me")
     app.delete_profile_photos(photos[0].file_id)
-    time.sleep(5)
     im = Image.open("background.jpg")
     MAX_W, MAX_H = im.size
     draw = ImageDraw.Draw(im)
@@ -28,4 +23,9 @@ while True:
     draw.text(((MAX_W - w) / 2, (MAX_H - h) / 2),str(x),(255,255,255),font=font)
     im.save('test.png')
     app.set_profile_photo("test.png")
-    time.sleep(30)
+    time.sleep(10)
+    app.send(functions.account.UpdateProfile(
+    first_name=str(x),
+    about="O'zbekistonda soat: " +str(x)
+    ))
+    time.sleep(10)
