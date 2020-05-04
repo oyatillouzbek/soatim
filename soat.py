@@ -15,7 +15,7 @@ while True:
     im = Image.open("background.jpg")
     MAX_W, MAX_H = im.size
     draw = ImageDraw.Draw(im)
-    font = ImageFont.truetype('for.ttf', 500)
+    font = ImageFont.truetype('for.ttf', 501)
     ok = pytz.timezone("Asia/Tashkent")
     x = datetime.datetime.now(tz=ok)
     x = x.strftime("%H:%M")
